@@ -12,5 +12,5 @@
 
   "runner_choice": "stateless",
 
-  "filename_extension" : ".groovy"
+  "filename_extension": ".groovy"
 }
