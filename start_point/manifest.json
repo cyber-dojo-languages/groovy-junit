@@ -10,7 +10,5 @@
 
   "image_name": "cyberdojofoundation/groovy_junit",
 
-  "runner_choice": "stateless",
-
   "filename_extension": ".groovy"
 }
