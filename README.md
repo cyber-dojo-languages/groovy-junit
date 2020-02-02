@@ -1,4 +1,3 @@
-
 [![CircleCI](https://circleci.com/gh/cyber-dojo-languages/groovy-junit.svg?style=svg)](https://circleci.com/gh/cyber-dojo-languages/groovy-junit)
 
 ## display_name="Groovy, JUnit"
