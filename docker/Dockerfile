@@ -13,12 +13,12 @@ RUN apk add --update coreutils bash tar file
 
 LABEL maintainer=jon@jaggersoft.com
 
-ARG VERSION=2.4.12
+ARG VERSION=3.0.3
 
 RUN mkdir /groovy
-RUN cp /groovy-${VERSION}/embeddable/groovy-all-${VERSION}.jar /groovy/
-RUN cp /groovy-${VERSION}/lib/hamcrest-core-1.3.jar            /groovy/
-RUN cp /groovy-${VERSION}/lib/junit-4.12.jar                   /groovy/
+RUN cp /groovy-${VERSION}/indy/groovy-${VERSION}-indy.jar /groovy/
+RUN cp /groovy-${VERSION}/lib/hamcrest-core-1.3.jar       /groovy/
+RUN cp /groovy-${VERSION}/lib/junit-4.13.jar              /groovy/
 
 ENV CLASSPATH=/groovy/
 
