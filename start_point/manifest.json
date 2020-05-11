@@ -2,7 +2,8 @@
 {
   "image_name": "cyberdojofoundation/groovy_junit",
   "display_name": "Groovy, JUnit",
-  "visible_filenames": [
+  "visible_filenames":
+  [
     "HikerTest.groovy",
     "Hiker.groovy",
     "cyber-dojo.sh"
