@@ -8,17 +8,19 @@ FROM cyberdojofoundation/groovy
 RUN (getent group sandbox) || (addgroup -g 51966 sandbox)
 RUN (grep -q sandbox:x:41966 /etc/passwd) || (adduser -D -g "" -h /home/sandbox -G sandbox -s /bin/bash -u 41966 sandbox)
 RUN apk add --update coreutils bash tar file
+ARG GIT_COMMIT_SHA
+ENV SHA=${GIT_COMMIT_SHA}
 # END of extra commands to fulfil runner's requirements
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 LABEL maintainer=jon@jaggersoft.com
 
-ARG VERSION=3.0.3
+ARG VERSION=2.4.12
 
 RUN mkdir /groovy
 RUN cp /groovy-${VERSION}/indy/groovy-${VERSION}-indy.jar /groovy/
 RUN cp /groovy-${VERSION}/lib/hamcrest-core-1.3.jar       /groovy/
-RUN cp /groovy-${VERSION}/lib/junit-4.13.jar              /groovy/
+RUN cp /groovy-${VERSION}/lib/junit-4.12.jar              /groovy/
 
 ENV CLASSPATH=/groovy/
 
