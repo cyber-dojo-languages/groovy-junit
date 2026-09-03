@@ -9,3 +9,12 @@ RUN cp /groovy-${VERSION}/lib/hamcrest-core-1.3.jar  /groovy/
 RUN cp /groovy-${VERSION}/lib/junit-4.13.2.jar       /groovy/
 
 ENV CLASSPATH=/groovy/
+
+# A kata's test run reads the AOT cache this leaves in /aot, for the JVM that
+# compiles, instead of loading those classes from the jars again on every
+# [test] press. The script explains which classes it holds, and why the JVM
+# that runs the tests has none.
+COPY throwaway_kata /tmp/throwaway_kata
+COPY record_aot_cache.sh /tmp/
+RUN bash /tmp/record_aot_cache.sh \
+ && rm -rf /tmp/record_aot_cache.sh /tmp/throwaway_kata
